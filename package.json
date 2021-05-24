@@ -1,0 +1,12 @@
+{
+  "name": "clean-architecture-typescript",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/avilabiel/clean-architecture-typescript.git",
+  "author": "Gabriel Ávila <avilabiel@gmail.com>",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^15.6.0",
+    "typescript": "^4.2.4"
+  }
+}

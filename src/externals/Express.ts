@@ -3,6 +3,8 @@ import bodyParser from "body-parser";
 import Youch from "youch";
 const helmet = require("helmet");
 import ServiceLocator from "./ServiceLocator";
+import { Request, Response, Error } from 'express';
+
 
 export default class Express {
   public express;
@@ -40,8 +42,8 @@ export default class Express {
     // this.express.use(require("../adapters/routes/Express/invalidRoutes"));
   }
 
-  exception(): any {
-    this.express.use(async (err, req, res, next) => {
+  exception(): Response {
+    this.express.use(async (err: Error, req: Request, res: Response, next: Function) => {
       let message: any = "Internal Server Error";
 
       if (process.env.NODE_ENV !== "production") {

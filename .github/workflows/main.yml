@@ -27,9 +27,9 @@ jobs:
           mysql root password: root
       - name: npm install, build, and test
         run: |
-          export GITHUB_TOKEN=${{ secret.PERSONAL_ACCESS_TOKEN }}
           npm install
           npm test
         env:
           CI: true
           NODE_ENV: "test"
+          GITHUB_TOKEN: "${{ secrets.PERSONAL_ACCESS_TOKEN }}"

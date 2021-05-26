@@ -3,8 +3,8 @@ import ILeadRepository from "@/entities/Lead/ILeadRepository";
 import CreateLead from "./CreateLead";
 
 class LeadRepositorySpy implements ILeadRepository {
-    persist(leadEntity: Lead) {
-        return leadEntity;
+    persist(leadEntity: Lead): Promise<Lead> {
+        return new Promise(() => leadEntity);
     }
 }
 const mockLeadRepository = new LeadRepositorySpy();
@@ -17,7 +17,7 @@ describe("CreateLead", () => {
       "test@gmail.com",
       "+5511932919232"
     );
-    jest.spyOn(mockLeadRepository, "persist").mockImplementationOnce(() => {
+    jest.spyOn(mockLeadRepository, "persist").mockImplementationOnce((): any => {
       return persistedLead;
     });
 

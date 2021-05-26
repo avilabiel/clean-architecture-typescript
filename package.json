@@ -6,7 +6,7 @@
   "author": "Gabriel Ávila <avilabiel@gmail.com>",
   "license": "MIT",
   "scripts": {
-    "test": "jest --ci --verbose --forceExit",
+    "test": "jest --ci --verbose --forceExit --detectOpenHandles",
     "start-dev": "nodemon --watch 'src/' --exec 'ts-node src/index.ts' -e ts",
     "db:status": "sequelize db:migrate:status",
     "db:drop": "sequelize db:migrate:undo:all",

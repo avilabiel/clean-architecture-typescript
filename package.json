@@ -7,7 +7,7 @@
   "license": "MIT",
   "scripts": {
     "test": "jest --ci --verbose --forceExit --detectOpenHandles",
-    "start-dev": "nodemon --watch 'src/' --exec 'ts-node src/index.ts' -e ts",
+    "start-dev": "nodemon --watch \"src\" --exec \"ts-node src/index.ts\" -e ts",
     "db:status": "sequelize db:migrate:status",
     "db:drop": "sequelize db:migrate:undo:all",
     "db:migrate": "sequelize db:migrate",
@@ -15,6 +15,7 @@
     "db:seed": "sequelize db:seed:all"
   },
   "devDependencies": {
+    "@types/express": "^4.17.12",
     "@types/jest": "^26.0.23",
     "@types/node": "^15.6.0",
     "faker": "^5.5.3",

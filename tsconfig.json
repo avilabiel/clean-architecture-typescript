@@ -10,6 +10,11 @@
     },
     "moduleResolution": "Node",
     "esModuleInterop": true,
+    "typeRoots": [
+      "./src/@types",
+      "./@types",
+      "./node_modules/@types"
+    ],
   },
   "exclude": [
     "node_modules"

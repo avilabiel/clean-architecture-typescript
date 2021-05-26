@@ -5,8 +5,6 @@ const models = require("./models");
 const migrationsPath = path.resolve(__dirname, "migrations");
 const seedersPath = path.resolve(__dirname, "seeders");
 
-console.log("============== ", process.env.NODE_ENV, "============");
-
 const migrationsConfig = {
   storage: "sequelize",
   storageOptions: {

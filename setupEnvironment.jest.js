@@ -7,8 +7,7 @@ require("dotenv").config({
 });
 
 beforeAll(async () => {
-  if (process.env.DATABASE_ENGINE === "mysql")
-    await MigrationsAndSeedersManager.up();
+  if (process.env.DATABASE_ENGINE === "mysql") await MigrationsAndSeedersManager.up();
 });
 
 beforeEach(async () => {

@@ -1,3 +1,3 @@
-import Express from "./externals/Express";
+import Server from "./externals/Express";
 
-new Express();
+new Server();

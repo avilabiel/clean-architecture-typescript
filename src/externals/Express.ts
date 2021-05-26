@@ -1,4 +1,4 @@
-import express from "express";
+import Express from "express";
 import bodyParser from "body-parser";
 import Youch from "youch";
 const helmet = require("helmet");
@@ -6,11 +6,11 @@ import ServiceLocator from "./ServiceLocator";
 import { Request, Response, Error } from 'express';
 
 
-export default class Express {
-  public express;
+export default class Server {
+  public express: Express;
 
   constructor() {
-    this.express = express();
+    this.express = Express();
 
     this.middlewares();
     this.routes();

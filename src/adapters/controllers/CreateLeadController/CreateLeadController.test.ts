@@ -1,6 +1,7 @@
 import request from "supertest";
 import faker from "faker";
-import { express } from "@/externals/Express";
+import Server from "@/externals/Express";
+const server = new Server();
 
 describe("CreateLeadController", () => {
   it("Creates the lead", async () => {
@@ -10,7 +11,7 @@ describe("CreateLeadController", () => {
       phone: faker.phone.phoneNumber(),
     };
 
-    const result = await request(express).post("/lead").send(body);
+    const result = await request(server.express).post("/lead").send(body);
 
     expect(result.status).toBe(200);
     expect(result.body.success).toBe(true);

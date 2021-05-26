@@ -1,6 +1,6 @@
 
 
-import CreateLead from "@/app/CreateLead/CreateLead";
+import CreateLead from "../../../app/CreateLead";
 
 export default class CreateLeadController {
   static async post(req, res) {

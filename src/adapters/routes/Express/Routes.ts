@@ -1,15 +1,15 @@
 import * as express from 'express';
 
-const routes = express.Router();
-// const { CreateLeadController } = require("../../controllers");
+const Routes = express.Router();
+import CreateLeadController from "../../controllers/CreateLeadController";
 
-routes.get("/hello-world", (req, res) => {
+Routes.get("/hello-world", (req, res) => {
   return res.send({
     success: true,
     message: "Hello World!",
   });
 });
 
-// routes.post("/lead", CreateLeadController.post);
+Routes.post("/lead", CreateLeadController.post);
 
-export default routes;
+export default Routes;

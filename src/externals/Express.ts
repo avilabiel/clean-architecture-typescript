@@ -1,13 +1,11 @@
 import Express from "express";
+import { Request, Response, Error } from 'express';
 import bodyParser from "body-parser";
 import Youch from "youch";
 const helmet = require("helmet");
-import ServiceLocator from "./ServiceLocator";
-import { Request, Response, Error } from 'express';
-
 import InvalidRoutes from "../adapters/routes/Express/InvalidRoutes";
 import Routes from "../adapters/routes/Express/Routes";
-
+import ServiceLocator from "./ServiceLocator";
 
 export default class Server {
   public express: Express;
@@ -57,7 +55,7 @@ export default class Server {
   }
 
   createHTTPServer() {
-    this.express.listen(3000);
-    console.log(`Server running at port ${3000}`);
+    this.express.listen(process.env.PORT);
+    console.log(`Server running at port ${process.env.PORT}`);
   }
 }

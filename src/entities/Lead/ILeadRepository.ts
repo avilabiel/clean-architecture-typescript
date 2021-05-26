@@ -1,5 +1,5 @@
 import Lead from "./Lead";
 
 export default interface ILeadRepository {
-    persist(leadEntity: Lead): Lead;
+    persist(leadEntity: Lead): Promise<Lead>;
 }

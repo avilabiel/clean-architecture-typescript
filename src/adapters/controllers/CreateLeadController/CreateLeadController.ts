@@ -1,7 +1,6 @@
 
 
-const CreateLead = require("../../../app/CreateLead/CreateLead");
-const SendLeadByEmail = require("../../../app/SendLeadByEmail/SendLeadByEmail");
+import CreateLead from "@/app/CreateLead/CreateLead";
 
 export default class CreateLeadController {
   static async post(req, res) {

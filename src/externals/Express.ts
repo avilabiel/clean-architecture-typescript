@@ -5,6 +5,9 @@ const helmet = require("helmet");
 import ServiceLocator from "./ServiceLocator";
 import { Request, Response, Error } from 'express';
 
+import InvalidRoutes from "../adapters/routes/Express/InvalidRoutes";
+import Routes from "../adapters/routes/Express/Routes";
+
 
 export default class Server {
   public express: Express;
@@ -33,13 +36,11 @@ export default class Server {
   }
 
   routes(): void {
-    return;
-    // this.express.use(require("../adapters/routes/Express/routes"));
+    this.express.use(Routes);
   }
 
   invalidRoutes(): void {
-    return;
-    // this.express.use(require("../adapters/routes/Express/invalidRoutes"));
+    this.express.use(InvalidRoutes);
   }
 
   exception(): Response {

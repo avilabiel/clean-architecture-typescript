@@ -1,9 +1,6 @@
-# clean-architecture-node-js
+# clean-architecture-typescript
 
-The idea is to create a simple API where it will save leads from the website's contact form. Also, this API should be responsible to send an email to:
-
-- The client
-- The stakeholder
+The idea is to create a simple API where it will save leads from the website's contact form.
 
 ## SOLID Architecture in my words
 
@@ -49,53 +46,11 @@ A Class should call only:
 - Methods from objects (receiveds through params)
 - Methods from objects (built by Class itself)
 
-## Structure
-
-This project will follow the Clean Architecture (SOLID) suggested by Robert C. Martin. I know there are other architectures (Onion, Hexagonal), but for this specific project it's gonna be Clean Architecture.
-
-```
-src
-+-- entities
-    +-- entity
-        +-- Lead.js
-        +-- LeadRepositoryInterface.js
-+-- app
-    +-- CreateLead
-        +-- CreateLead.js                   # Class
-        +-- CreateLead.test.js              # Unit Tests
-        +-- CreateLead.requirements.md      # Use Case in Normal Language
-+-- adapters
-    +-- topic (e.g.: controllers, routes, serializers)
-        +-- item
-            +-- item1.js (e.g.: LeadController.js, LeadRoutes.js, LeadSerializer.js)
-            +-- item1.requirements.md
-            +-- item1.test.js
-+-- externals           # External Details like database, loggers, servers, Express, Inquirer, ...
-    +-- Express.js
-    +-- EmailService.js
-+-- index.js            # Starts the application (in this case, the server - from externals)
-```
-
 ## Commits
 
 The automated tests will be checked for every pre commit. It will not be allowed to commit if they don't pass.
 
-## Improvements and Ideas
+## Improvements for next releases
 
-By doing this simple project, I discovered some answers for my questions:
-
-- WIP
-- Why Unit Tests are better than Integration?
-- Why should we keep both?
-
-### What is a good workflow to write good automated tests without losing productivity?
-
-WIP
-
-- Think about the Use Cases
-- Start by Entities and Interfaces
-- Create the files following project's structure
-- Go to unit tests
-- Go to Controllers
-- Go to integration tests
-- Code!
+- We use `paths`
+- We use better modules for controllers

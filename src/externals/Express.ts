@@ -1,5 +1,5 @@
 import Express from "express";
-import { Request, Response, Error } from 'express';
+import { Request, Response, Error, NextFunction } from 'express';
 import bodyParser from "body-parser";
 import Youch from "youch";
 const helmet = require("helmet");
@@ -28,7 +28,7 @@ export default class Server {
     this.express.use(this.buildServiceLocator);
   }
 
-  buildServiceLocator(req, res, next): void {
+  buildServiceLocator(req: Request, res: Response, next: NextFunction): void {
     req.serviceLocator = ServiceLocator.getInstance();
     return next();
   }

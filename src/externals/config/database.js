@@ -1,23 +1,17 @@
-{
-  "development": {
-    "username": "root",
-    "password": null,
-    "database": "database_development",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
+module.exports = {
+  development: {
+    dialect: "mysql",
+    username: "root",
+    password: "root",
+    database: "clean_architecture_typescript",
+    host: "localhost",
+    define: {
+      paranoid: false,
+      timestamps: true,
+      freezeTableName: true,
+      underscored: true,
+    },
+    timezone: "-03:00",
+    seederStorage: "sequelize",
   },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "production": {
-    "username": "root",
-    "password": null,
-    "database": "database_production",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  }
-}
+};
